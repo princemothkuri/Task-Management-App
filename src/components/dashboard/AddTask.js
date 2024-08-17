@@ -57,7 +57,6 @@ const AddTask = () => {
       const response = await createTask(taskWithPriority, token);
 
       if (response.status === 201) {
-        console.log("Task successfully added:", response.data);
         dispatch(setAddTask({ task: response.data.task }));
 
         setTaskData({

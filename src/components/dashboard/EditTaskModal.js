@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   Radio,
   CircularProgress,
+  useMediaQuery,
 } from "@mui/material";
 
 const EditTaskModal = ({ open, onClose, task, onSave, loading }) => {
@@ -16,6 +17,8 @@ const EditTaskModal = ({ open, onClose, task, onSave, loading }) => {
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [status, setStatus] = useState("");
+
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const [selectedPriority, setSelectedPriority] = useState("");
 
@@ -48,7 +51,7 @@ const EditTaskModal = ({ open, onClose, task, onSave, loading }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 500,
+          width: isMobile ? 300 : 500,
           bgcolor: "background.paper",
           border: "2px solid #000",
           boxShadow: 24,

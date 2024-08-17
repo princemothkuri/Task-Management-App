@@ -24,7 +24,6 @@ import { useNavigate } from "react-router-dom";
 const DashboardLayout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userDetails = useSelector((state) => state.taskManagement.user);
   const token = useSelector((state) => state.taskManagement.token);
   const loggedIn = useSelector((state) => state.taskManagement.loggedIn);
   const tasks = useSelector((state) => state.taskManagement.tasks);
@@ -120,7 +119,7 @@ const DashboardLayout = () => {
       <NavBar />
       <Grid container spacing={3} sx={{ mt: 2 }}>
         <Grid item xs={12}>
-          <UserGreeting name={userDetails} />
+          <UserGreeting />
         </Grid>
         <Grid item xs={12} sm={4}>
           <TaskFilters
